@@ -19,4 +19,5 @@ cd start
 find . -type f -exec sed -i "s/start/${NEW_COMPONENT_NAME}/g" {} +
 cd ..
 mv start ${NEW_COMPONENT_NAME}
+cd ../..
 ```
