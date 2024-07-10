@@ -10,4 +10,13 @@ start Component with:
 
 To install run (with moqui-framework):
 
-    $ ./gradlew getComponent -Pcomponent=start
+```bash
+# In Moqui Framework Directory
+export NEW_COMPONENT_NAME=new
+cd runtime/component
+git clone https://github.com/acetousk/start
+cd start
+find . -type f -exec sed -i "s/start/${NEW_COMPONENT_NAME}/g" {} +
+cd ..
+mv start ${NEW_COMPONENT_NAME}
+```
