@@ -21,6 +21,8 @@ git clone https://github.com/acetousk/start
 cd start
 find . -type f -exec sed -i "s/start/${NEW_COMPONENT_NAME}/g" {} +
 git remote set-url origin git@github.com:${GIT_USERNAME}/${NEW_COMPONENT_NAME}
+git add *
+git commit -m "First commit"
 git branch -M master
 git push -u origin master
 cd ..
