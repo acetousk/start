@@ -2,30 +2,19 @@
 
 start Component with: 
 
-- entities
 - data
+- entities
+- screens
 - services
 - REST API
-- screens
+- src
 
-Create a new git repository at ${NEW_COMPONENT_NAME}
+Create a new moqui component
 
-To install and push to your new repo run (with moqui-framework):
+To use run the following with moqui-framework [226f4826f97a0300d704b55a3aa63298aedd9acc](https://github.com/moqui/moqui-framework/pull/636/commits/226f4826f97a0300d704b55a3aa63298aedd9acc) or later:
 
 ```bash
-# In Moqui Framework Directory
-export NEW_COMPONENT_NAME=new # Change this to something else
-export GIT_USERNAME=me # Change this to something else
-cd runtime/component
-git clone https://github.com/acetousk/start
-cd start
-find . -type f -exec sed -i "s/start/${NEW_COMPONENT_NAME}/g" {} +
-git remote set-url origin git@github.com:${GIT_USERNAME}/${NEW_COMPONENT_NAME}
-git add *
-git commit -m "First commit"
-git branch -M master
-git push -u origin master
-cd ..
-mv start ${NEW_COMPONENT_NAME}
-cd ../..
+./gradlew createComponent -Pcomponent=your-component
 ```
+
+See [this](https://forum.moqui.org/t/moqui-start-component/725/7) for context
